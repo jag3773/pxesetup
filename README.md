@@ -69,17 +69,17 @@ TFTP Installation and Configuration
 
 Install the TFTP server on your PXE boot server:
 
-  yum install tftp tftp-server
-    or
-  apt-get update && apt-get install tftp tftpd
+    yum install tftp tftp-server
+      or
+    apt-get update && apt-get install tftp tftpd
 
 If you are running iptables, you'll need to add the following rule:
 
-  -A RH-Firewall-1-INPUT -s 192.168.1.0/24 -p udp -m udp --dport 69 -j ACCEPT 
+    -A RH-Firewall-1-INPUT -s 192.168.1.0/24 -p udp -m udp --dport 69 -j ACCEPT 
 
 You will also need to load the ip_conntrack_tftp iptables module:
 
-  modprobe ip_conntrack_tftp
+    modprobe ip_conntrack_tftp
 
 On CentOS/Redhat servers, make the above persistent by editing
 /etc/sysconfig/iptables, and /etc/sysconfig/iptables-config.
@@ -99,7 +99,7 @@ system that is close to you.  Also, you may comment out any operating system
 that you do not want to support.  Run the script with no arguments to see up
 to date usage instructions. Basically, you should be able to run:
 
-  python mktftpboot.py /tftpboot
+    python mktftpboot.py /tftpboot
 
 and it will download the appropriate boot files for each supported operating
 system.
@@ -108,7 +108,7 @@ You will then be instructed to make your menu system in /tftpboot/pxelinux.cfg,
 assuming that tftpboot is the directory you passed to mktftpboot.py.  If this
 is a new setup, then you can just run this:
 
-  cp pxelinux.cfg/* /tftpboot/pxelinux.cfg/
+    cp pxelinux.cfg/* /tftpboot/pxelinux.cfg/
 
 This will give you a functional PXE boot environment that will allow you to do
 stock installs, boot into rescue environments, and run memtest.
@@ -128,26 +128,26 @@ the preseed or kickstart files to the installation process.
 The PXE boot server you just setup is a fine place to put these files.  First,
 install a webserver:
 
-  yum install httpd
-    or
-  apt-get install apache2
+    yum install httpd
+      or
+    apt-get install apache2
 
 On CentOS, start and enable the web server:
 
-  service httpd start
-  chkconfig httpd on
+    service httpd start
+    chkconfig httpd on
 
 The default webroot will likely be /var/www/html/.  In this directory, create
 two folders:
 
-  mkdir /var/www/html/kickstart
-  mkdir /var/www/html/preseed
+    mkdir /var/www/html/kickstart
+    mkdir /var/www/html/preseed
 
 Now, copy the basic automatic install files from the kickstart and preseed
 files in the current direcotry:
 
-  cp pressed/* /var/www/html/preseed/
-  cp kickstart/* /var/www/html/kickstart/
+    cp pressed/* /var/www/html/preseed/
+    cp kickstart/* /var/www/html/kickstart/
 
 By default, the root password on these intallations is "pl3aseChangeme!".  To
 set this to something different you'll need to encode a new password and
