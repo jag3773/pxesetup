@@ -44,22 +44,22 @@ Edit /etc/dhcpd.conf, or /etc/dhcpd/dhcpd.conf and make an entry for your
 subnet similar to the following:
 
 ------------------ snip ------------------
-ddns-update-style none;
-ignore client-updates;
-
-next-server PXEServerIP;
-filename "pxelinux.0";
-
-subnet 192.168.1.0 netmask 255.255.255.0 {
-        option routers                  192.198.1.1;   # Your Gateway IP
-        option subnet-mask              255.255.255.0;
-        option domain-name              "example.com";
-        option domain-name-servers      8.8.8.8;       # DNS server
-        option time-offset              -18000;        # Eastern Standard Time
-        range dynamic-bootp 192.168.1.80 192.168.1.99; # DHCP IP range
-        default-lease-time 2160;
-        max-lease-time 4320;
-}
+    ddns-update-style none;
+    ignore client-updates;
+    
+    next-server PXEServerIP;
+    filename "pxelinux.0";
+    
+    subnet 192.168.1.0 netmask 255.255.255.0 {
+            option routers                  192.198.1.1;   # Your Gateway IP
+            option subnet-mask              255.255.255.0;
+            option domain-name              "example.com";
+            option domain-name-servers      8.8.8.8;       # DNS server
+            option time-offset              -18000;        # Eastern Standard Time
+            range dynamic-bootp 192.168.1.80 192.168.1.99; # DHCP IP range
+            default-lease-time 2160;
+            max-lease-time 4320;
+    }
 ------------------ snip ------------------
 
 Start or restart dhcpd and check /var/log/message or /var/log/syslog for
