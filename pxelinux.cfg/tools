@@ -1,0 +1,8 @@
+MENU TITLE Tools Menu
+
+LABEL Main Menu
+  KERNEL vesamenu.c32
+  APPEND pxelinux.cfg/default
+
+LABEL memtest
+  KERNEL memtest86

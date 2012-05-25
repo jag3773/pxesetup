@@ -1,0 +1,10 @@
+# Mirrors file
+# Use the defaults below or update to a mirror closer to you.
+# Do not change the variable name on the left, leave the word "arch" as well.
+# Comment out any operating system line that you do not want to support.
+
+debianstable = http://mirror.anl.gov/pub/debian/dists/stable/main/installer-arch/current/images/netboot/debian-installer/arch
+ubuntuprecise = http://mirror.anl.gov/pub/ubuntu/dists/precise/main/installer-arch/current/images/netboot/ubuntu-installer/arch
+ubuntulucid = http://mirror.anl.gov/pub/ubuntu/dists/lucid/main/installer-arch/current/images/netboot/ubuntu-installer/arch
+centos6 = http://mirror.anl.gov/pub/centos/6.2/os/arch/images/pxeboot/
+centos5 = http://mirror.anl.gov/pub/centos/5.8/os/arch/images/pxeboot/

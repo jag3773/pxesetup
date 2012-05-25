@@ -1,0 +1,23 @@
+default vesamenu.c32
+prompt 0
+
+MENU TITLE Main Menu
+
+LABEL Boot local hard drive
+  LOCALBOOT 0
+
+LABEL Rescue
+  KERNEL vesamenu.c32
+  APPEND pxelinux.cfg/rescue
+
+LABEL Tools
+  KERNEL vesamenu.c32
+  APPEND pxelinux.cfg/tools
+
+LABEL Stock Installs
+  KERNEL vesamenu.c32
+  APPEND pxelinux.cfg/stock
+
+LABEL Automatic Installs
+  KERNEL vesamenu.c32
+  APPEND pxelinux.cfg/auto
