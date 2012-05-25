@@ -43,7 +43,6 @@ If you currently do not have a DHCP server on your subnet:
 Edit /etc/dhcpd.conf, or /etc/dhcpd/dhcpd.conf and make an entry for your
 subnet similar to the following:
 
------------------- snip ------------------
     ddns-update-style none;
     ignore client-updates;
     
@@ -60,7 +59,6 @@ subnet similar to the following:
             default-lease-time 2160;
             max-lease-time 4320;
     }
------------------- snip ------------------
 
 Start or restart dhcpd and check /var/log/message or /var/log/syslog for
 failures.
