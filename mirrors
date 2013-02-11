@@ -8,3 +8,4 @@ ubuntuprecise = http://mirror.anl.gov/pub/ubuntu/dists/precise/main/installer-ar
 ubuntulucid = http://mirror.anl.gov/pub/ubuntu/dists/lucid/main/installer-arch/current/images/netboot/ubuntu-installer/arch
 centos6 = http://mirror.anl.gov/pub/centos/6.2/os/arch/images/pxeboot/
 centos5 = http://mirror.anl.gov/pub/centos/5.8/os/arch/images/pxeboot/
+mfsbsd9 = http://mfsbsd.vx.sk/files/iso/arch/9/

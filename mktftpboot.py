@@ -50,7 +50,7 @@ in %s.  I will also replace pxelinux.0, vesamenu.c32, and memtest86.
 '''
 mirrorsfile = "mirrors"
 bootfiles = ["linux", "initrd.gz"]
-pxelinuxurl = "http://mirror.anl.gov/pub/ubuntu/dists/precise/main/installer-i386/current/images/netboot/ubuntu-installer/i386/pxelinux.0"
+pxelinuxurl = "http://mirror.anl.gov/pub/ubuntu/dists/quantal/main/installer-i386/current/images/netboot/ubuntu-installer/i386/pxelinux.0"
 vesamenuurl = "http://mirror.anl.gov/pub/centos/6/os/i386/isolinux/vesamenu.c32"
 memtesturl = "http://mirror.anl.gov/pub/centos/5/os/i386/isolinux/memtest"
 
@@ -81,6 +81,9 @@ def loadMirrors(filename):
       mirrors[k].append('x86_64')
       mirrors[k].append('initrd.img')
       mirrors[k].append('vmlinuz')
+    elif 'mfsbsd' in k:
+      mirrors[k].append('amd64')
+      mirrors[k].append('mfsbsd-se-9.1-RELEASE-arch.iso')
     else:
       mirrors[k].append('amd64')
       mirrors[k].append('initrd.gz')
@@ -108,8 +111,9 @@ def getFiles(mirrors, tftpdir):
         os.makedirs("%s/%s/%s" % (tftpdir, OS, arch))
       except OSError: pass
       for bf in m[3:5]:
-        geturl('%s/%s' % (m[0].replace('arch', arch).strip('/'), bf),
-                                "%s/%s/%s/%s" % (tftpdir, OS, arch, bf))
+        geturl('%s/%s' % (m[0].replace('arch', arch).strip('/'),
+           bf.replace('arch', arch)), "%s/%s/%s/%s" % (tftpdir, OS, arch,
+           bf.replace('arch', arch)))
   geturl(pxelinuxurl, "%s/pxelinux.0" % tftpdir)
   geturl(vesamenuurl, "%s/vesamenu.c32" % tftpdir)
   geturl(memtesturl, "%s/memtest86" % tftpdir)

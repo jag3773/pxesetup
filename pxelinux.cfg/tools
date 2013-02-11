@@ -6,3 +6,13 @@ LABEL Main Menu
 
 LABEL memtest
   KERNEL memtest86
+
+LABEL mfsBSD
+  KERNEL memdisk
+  INITRD mfsbsd/i386/mfsbsd-se-9.1-RELEASE-i386.iso
+  APPEND iso
+
+LABEL mfsBSD - 64
+  KERNEL memdisk
+  INITRD mfsbsd/amd64/mfsbsd-se-9.1-RELEASE-amd64.iso
+  APPEND iso

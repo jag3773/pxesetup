@@ -113,6 +113,11 @@ is a new setup, then you can just run this:
 This will give you a functional PXE boot environment that will allow you to do
 stock installs, boot into rescue environments, and run memtest.
 
+In addition, this sets up mfsBSD to load as an ISO image over the network,
+found in the tools menu.  This may serve as a template for loading other base
+ISO images or regular disk images via pxelinux.  These images may be gzipped
+too.
+
 If you want to enable automatic installs then please continue to the next
 section.
 
