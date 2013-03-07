@@ -108,7 +108,7 @@ You will then be instructed to make your menu system in /tftpboot/pxelinux.cfg,
 assuming that tftpboot is the directory you passed to mktftpboot.py.  If this
 is a new setup, then you can just run this:
 
-    cp pxelinux.cfg/* /tftpboot/pxelinux.cfg/
+    cp -av pxelinux.cfg /tftpboot/
 
 This will give you a functional PXE boot environment that will allow you to do
 stock installs, boot into rescue environments, and run memtest.
@@ -151,7 +151,7 @@ two folders:
 Now, copy the basic automatic install files from the kickstart and preseed
 files in the current direcotry:
 
-    cp pressed/* /var/www/html/preseed/
+    cp preseed/* /var/www/html/preseed/
     cp kickstart/* /var/www/html/kickstart/
 
 By default, the root password on these intallations is "pl3aseChangeme!".  To
