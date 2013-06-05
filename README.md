@@ -158,6 +158,8 @@ By default, the root password on these intallations is "pl3aseChangeme!".  To
 set this to something different you'll need to encode a new password and
 update the relevant options in the kickstart and preseed files.
 
+The default timezone in these preseed and kickstart files is America/Denver.
+
 If you run your own mirror, or if you are closer to another mirror than the
 default, you can update the mirror options in the kickstart and preseed files.
 Choosing a close and fast mirror will greatly increase the speed of the
