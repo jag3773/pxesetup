@@ -36,7 +36,7 @@ If you currently do not have a DHCP server on your subnet:
 
   Install dhcpd:
 
-    yum install dhcpd
+    yum install dhcp
       or
     apt-get update && apt-get install dhcp3-server
 
